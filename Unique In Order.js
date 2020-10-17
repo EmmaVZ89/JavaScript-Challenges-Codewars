@@ -8,7 +8,9 @@
 
 var uniqueInOrder=function(iterable){
   let newArray = [];
-  iterable = iterable.split("");
+  if(typeof(iterable) === "String") {
+    iterable = iterable.split("");
+  }
   for (let i = 0; i < iterable.length; i++) {
     if(iterable[i+1] !== iterable[i]) {
       newArray.push(iterable[i])
