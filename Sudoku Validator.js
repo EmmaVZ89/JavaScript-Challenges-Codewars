@@ -10,9 +10,6 @@ function validSolution(board){
   }
     column2[i] = column1.reduce((a,b)=>a+b)
   }
-  // if (board[7][7] === board[8][6]) {
-  //   return false;
-  // }
   return row.every(is45) && column2.every(is45);
 }
 function is45(n) {
