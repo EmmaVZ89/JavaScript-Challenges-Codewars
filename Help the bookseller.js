@@ -45,5 +45,6 @@ function stockList(listOfArt, listOfCat){
   if (countEmptyString === listOfCat.length) {
     return "";
   } else {
-    return arrayResult.join(" - ");
-};
+    return arrayResult.join(" - ")
+}
+  }
