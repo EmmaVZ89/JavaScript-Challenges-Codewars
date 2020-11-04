@@ -4,7 +4,6 @@
 
 
 function isPangram(string){
-  let regex = /[a-z]/g;
   let letters = {};
   let alphabetLetterCount = 0;
   string = string.toLowerCase().replace(/[\W\d\s_]/g, "").split("");
