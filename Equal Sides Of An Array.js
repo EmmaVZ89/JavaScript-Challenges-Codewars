@@ -24,3 +24,21 @@
 //
 // Note:
 // If you are given an array with multiple answers, return the lowest correct index.
+
+
+function findEvenIndex(arr) {
+
+  let left = 0;
+  let rigth = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+  left = arr.slice(0, i+1).reduce((a,b) => a+b, 0);
+  rigth = arr.slice(i, arr.length).reduce((a,b) => a+b, 0);
+    if(left === rigth) {
+      return i
+    }
+  }
+
+return -1;
+
+}
