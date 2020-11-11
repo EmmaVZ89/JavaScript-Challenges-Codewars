@@ -6,3 +6,20 @@
 // 2 4 6
 // 3 6 9
 // for given example, the return value should be: [[1,2,3],[2,4,6],[3,6,9]]
+
+
+multiplicationTable = function(size) {
+  let firstArrayNum = [];
+  let result = [];
+
+  for (let i = 1; i <= size; i++){
+  firstArrayNum.push(i);
+  }
+
+  for (let j = 1; j <= size; j++){
+    result.push(firstArrayNum.map(item=>item*j));
+  }
+
+  return result;
+
+}
