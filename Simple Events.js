@@ -13,3 +13,26 @@
 // the context of handlers' execution is not important
 // each handler will be subscribed at most once at any given moment of time. It can still be unsubscribed and then subscribed again
 // Also see an example test fixture for suggested usage
+
+
+function Event() {
+  this.handlers = [];
+}
+Event.prototype.subscribe = function(handler) {
+  this.handlers.push(handler);
+};
+
+Event.prototype.unsubscribe = function(handler) {
+  let i = this.handlers.indexOf(handler);
+
+  if (-1 !== handler) {
+    this.handlers.splice(i, 1);
+  }
+};
+
+Event.prototype.emit = function () {
+  let args = arguments;
+  this.handlers.forEach(function(handler) {
+    handler.apply(null, args);
+  });
+};
