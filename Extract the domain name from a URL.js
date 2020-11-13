@@ -6,15 +6,8 @@
 
 
 function domainName(url){
-  let newArray = url.split(/[\/\.]/g);
-  let acc = "";
-  for (let i = 0; i < newArray.length; i++) {
-    if (newArray[i] === "https:" || newArray[i] === "archive" || newArray[i] === "http:" || newArray[i] === "default") {
-      continue;
-    }
-    if (newArray[i].length > acc.length) {
-      acc = newArray[i];
-    }
-  }
-  return acc
+  return  url.replace('http://', '')
+             .replace('https://', '')
+             .replace('www.', '')
+             .split('.')[0];
 }
