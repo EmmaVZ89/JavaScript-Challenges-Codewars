@@ -8,3 +8,11 @@
 // compose(5, doubleTheValue) // should === 10
 // compose(5, doubleTheValue, addOneToTheValue) // should === 11
 // If only a single parameter is passed in, return that parameter.
+
+
+const compose = function(value) {
+  for(let i = 1 ; i< arguments.length ; i++) {
+    value = arguments[i](value);
+  }
+  return value;
+}
