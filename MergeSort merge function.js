@@ -15,3 +15,17 @@
 // mergesorted([1,2],[3]) //should: [1,2,3]
 //
 // mergesorted([1],[2, 3]) //should: [1,2,3]
+
+function mergesorted(a, b) {
+   const arr = [];
+
+  while(a.length && b.length){
+    if(a[0] < b [0]){
+      arr.push(a.shift())
+    }else{
+      arr.push(b.shift())
+    }
+  }
+
+  return [...arr,...a,...b];
+}
