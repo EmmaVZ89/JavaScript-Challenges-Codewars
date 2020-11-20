@@ -66,3 +66,47 @@
 // Result:
 //
 // ['E.Honda', 'Chun Li', 'Ken', 'M.Bison', 'Sagat', 'Dhalsim
+
+
+function streetFighterSelection(fighters, position, moves){
+  let inicialPosition = fighters[position[0]][position[1]];
+  let resultMoves = [];
+
+  for (let i = 0; i < moves.length; i++) {
+    if (moves[i] === "up") {
+      if (position[0] === 0) {
+        inicialPosition = inicialPosition;
+      } else {
+        position[0] = position[0] - 1;
+        inicialPosition = fighters[position[0]][position[1]];
+      }
+    } else if (moves[i] === "left") {
+      if (position[1] === 0) {
+        position[1] = fighters[0].length - 1;
+        inicialPosition = fighters[position[0]][position[1]];
+      } else {
+        position[1] = position[1] - 1;
+        inicialPosition = fighters[position[0]][position[1]];
+      }
+    } else if (moves[i] === "right") {
+      if (position[1] === fighters[0].length - 1) {
+        position[1] = 0;
+        inicialPosition = fighters[position[0]][position[1]];
+      } else {
+        position[1] = position[1] + 1;
+        inicialPosition = fighters[position[0]][position[1]];
+      }
+    } else if (moves[i] === "down") {
+      if (position[0] === 1) {
+        inicialPosition = inicialPosition;
+      } else {
+        position[0] = position[0] + 1;
+        inicialPosition = fighters[position[0]][position[1]];
+      }
+    }
+    resultMoves.push(inicialPosition);
+  }
+
+  return resultMoves;
+
+}
