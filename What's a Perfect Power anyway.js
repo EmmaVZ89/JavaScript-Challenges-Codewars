@@ -14,3 +14,15 @@
 //     Test.assertEquals( isPP(5), null, "5 isn't a perfect number");
 //   });
 // });
+
+
+var isPP = function(n){
+  for (let i = 2; i < n; i++) {
+    for (let j = 2; j < n; j++) {
+      if (i**j === n) {
+        return [i, j];
+      }
+    }
+  }
+  return null;
+}
