@@ -18,3 +18,16 @@
 // Example solution call...
 //
 // GroupByDifference.new([5, 32, 5, 1, 31, 70, 30, 8]).find(3) #=> [5,5,8,30,31,32]
+
+class GroupByDifference {
+  constructor(numbers) {
+    this.numbers = numbers
+  }
+
+  find(range) {
+    return this.numbers
+      .slice()
+      .sort( (a, b) => a - b)
+      .filter( (n, i, a) =>  a[i+1] - n <= range || n - a[i-1] <= range)
+  }
+}
