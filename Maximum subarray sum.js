@@ -5,3 +5,25 @@
 // Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.
 //
 // Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
+
+var maxSequence = function(arr){
+  let current = 0;
+  let mayor = 0;
+
+  if (arr.every(isAllNegative)) {
+    return 0;
+  }
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  arr.forEach(a => {
+    current = Math.max(a, current + a)
+    mayor = Math.max(mayor, current)
+  })
+  return mayor
+}
+
+let isAllNegative = function (num) {
+  return num < 0;
+}
